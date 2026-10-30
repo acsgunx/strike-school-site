@@ -1,0 +1,268 @@
+/* Technical Analysis visuals. Uses the tokens defined in app.css. */
+.ta-chart {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.ta-ctl {
+  margin-top: 4px;
+}
+.ta-notes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+  counter-reset: tan;
+}
+.ta-notes li {
+  counter-increment: tan;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 2px 8px;
+  align-items: start;
+  font-size: 0.88rem;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  opacity: 0.35;
+  transform: translateY(4px);
+  transition: opacity 0.4s, transform 0.4s, border-color 0.4s;
+}
+.ta-notes li::before {
+  content: counter(tan);
+  grid-row: span 2;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 0.75rem/1 var(--f-mono);
+  color: var(--on-solid);
+  background: var(--c, var(--accent));
+}
+.ta-notes li b {
+  font-family: var(--f-display);
+}
+.ta-notes li span {
+  color: var(--muted);
+}
+.ta-notes li.on {
+  opacity: 1;
+  transform: none;
+  border-color: var(--c, var(--accent));
+}
+.ta-notes .c-accent {
+  --c: var(--accent);
+}
+.ta-notes .c-violet {
+  --c: var(--violet);
+}
+.ta-notes .c-warn {
+  --c: var(--warn);
+}
+.ta-notes .c-put {
+  --c: var(--put);
+}
+
+.rp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.rp-cell {
+  display: grid;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px;
+  min-width: 0;
+}
+.rp-cell b {
+  font: 700 0.85rem/1 var(--f-mono);
+}
+
+.ca-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+.ca-ctl {
+  display: grid;
+  gap: 4px;
+}
+.cb-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 12px;
+}
+.cb-grid > div {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+@media (max-width: 520px) {
+  .ca-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rp-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Unit 2 ---------- */
+.ff-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cmp tr.hl th,
+.cmp tr.hl td {
+  background: var(--accent-soft);
+}
+
+/* ---------- Unit 3 ---------- */
+.pq-choices {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.cg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.cg-card {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+}
+.cg-card:hover {
+  border-color: var(--accent);
+}
+.cg-card b {
+  font-family: var(--f-display);
+}
+.cg-card span {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ---------- Unit 4 ---------- */
+.lg-warn {
+  --c: var(--warn);
+}
+
+/* ---------- Unit 5 ---------- */
+.sw-warn {
+  background: var(--warn);
+}
+.ck-wrap {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+.ck-ring {
+  --p: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: radial-gradient(closest-side, var(--surface) 76%, transparent 77%), conic-gradient(var(--gain) calc(var(--p) * 360deg), var(--line) 0);
+  transition: background 0.3s;
+}
+.ck-ring b {
+  font: 800 1.3rem/1 var(--f-mono);
+}
+.ck-ring span {
+  font: 600 0.66rem/1.4 var(--f-mono);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.ck-banner {
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+}
+.ck-banner.ok {
+  border-color: var(--gain);
+  background: color-mix(in srgb, var(--gain) 10%, var(--surface));
+}
+.ck-banner.no b {
+  color: var(--loss);
+}
+.ck-banner.ok b {
+  color: var(--gain);
+}
+.ck-list {
+  display: grid;
+  gap: 6px;
+}
+.ck-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+.ck-box {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--muted);
+  display: grid;
+  place-items: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.ck-item[aria-pressed='true'] {
+  border-color: var(--gain);
+}
+.ck-item[aria-pressed='true'] .ck-box {
+  background: var(--gain);
+  border-color: var(--gain);
+}
+.ck-item[aria-pressed='true'] .ck-box::after {
+  content: '✓';
+  color: var(--on-solid);
+  font: 800 0.8rem/1 var(--f-body);
+}
+.jr-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.jr-form .select,
+.jr-form .input {
+  width: auto;
+  flex: 1 1 90px;
+}
+.cmp.jr th:nth-child(2),
+.cmp.jr tbody th {
+  text-align: left;
+  font-family: var(--f-body);
+  font-weight: 700;
+}

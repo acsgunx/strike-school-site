@@ -1,0 +1,28 @@
+/* Lessons of a Stock Operator visuals. Uses the tokens defined in app.css. */
+.op-tape {
+  display: flex;
+  gap: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  font: 600 0.84rem/1.2 var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  mask-image: linear-gradient(90deg, transparent, #000 12%);
+}
+.op-tape span {
+  flex: none;
+}
+.op-tape .up {
+  color: var(--gain);
+}
+.op-tape .dn {
+  color: var(--loss);
+}
+.op-tape .big {
+  text-decoration: underline;
+  text-decoration-color: var(--warn);
+  text-underline-offset: 3px;
+}

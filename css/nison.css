@@ -1,0 +1,41 @@
+/* Japanese Candlesticks: the engulfing strength meter. */
+.ni-meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.ni-meter-cells {
+  display: flex;
+  gap: 4px;
+}
+.ni-meter-cells span {
+  width: 28px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--line);
+  transition: background 0.3s;
+}
+.ni-meter-cells span.on {
+  background: var(--gain);
+}
+
+/* The chart-reading game: a question box under the chart. */
+.ni-hunt {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.ni-hunt-q {
+  font: 700 1.05rem/1.35 var(--f-display);
+}
+.ni-hunt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}

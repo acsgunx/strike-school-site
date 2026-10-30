@@ -1,0 +1,10 @@
+/* Options Trading additions (Unit 6 onward). Uses the tokens defined in app.css. */
+.vix-world th,
+.vix-world td {
+  white-space: normal;
+  text-align: left;
+  vertical-align: top;
+}
+.vix-world th .fine {
+  font-weight: 400;
+}

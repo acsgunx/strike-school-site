@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="icons/favicon.ico" sizes="any">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Strike School">
+<meta name="theme-color" content="#f2f4f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1220" media="(prefers-color-scheme: dark)">
+<!-- artifact:start -->
+<title>Strike School</title>
+<meta name="description" content="Learn the stock market and options trading with interactive, animated lessons, a strategy lab and a trade simulator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/fundamentals.css">
+<link rel="stylesheet" href="css/technical.css">
+<link rel="stylesheet" href="css/pivots.css">
+<link rel="stylesheet" href="css/options.css">
+<link rel="stylesheet" href="css/operator.css">
+<link rel="stylesheet" href="css/zone.css">
+<link rel="stylesheet" href="css/murphy.css">
+<link rel="stylesheet" href="css/nison.css">
+<link rel="stylesheet" href="css/crypto.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#home" aria-label="Strike School home">
+    <svg class="brand-mark" viewBox="0 0 512 512" aria-hidden="true">
+      <defs><linearGradient id="bm-grad" x1="0" y1="0" x2="1" y2="1"><stop class="bm-from" offset="0"/><stop class="bm-to" offset="1"/></linearGradient></defs>
+      <rect width="512" height="512" rx="112" fill="url(#bm-grad)"/>
+      <path class="bm-line" d="M100 344H236L384 160" fill="none" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="bm-dot" cx="384" cy="160" r="40" stroke-width="14"/>
+    </svg>
+    <span>Strike School</span>
+  </a>
+  <nav class="tabs" aria-label="Sections">
+    <a href="#home" data-tab="home">Learn</a>
+    <a href="#lab" data-tab="lab">Strategy Lab</a>
+    <a href="#sim" data-tab="sim">Simulator</a>
+    <a href="#cards" data-tab="cards">Flashcards</a>
+    <a href="#glossary" data-tab="glossary">Glossary</a>
+  </nav>
+  <div class="xp" id="xp" aria-live="polite"></div>
+</header>
+
+<main id="main"></main>
+
+<footer class="foot">
+  For learning only. Every company, fund and price in this app is made up or simulated, and charts labeled as models or simulations are not real market history. Options prices come from the textbook Black-Scholes model with a 4% interest rate. Real markets have fees, taxes, dividends and liquidity gaps that this app simplifies. Nothing here is financial advice.
+</footer>
+
+<div id="pop" class="pop" role="dialog" aria-label="Term definition" hidden></div>
+
+<script src="js/ui.js"></script>
+<script src="js/bs.js"></script>
+<script src="js/glossary.js"></script>
+<script src="js/fundamentals/course.js"></script>
+<script src="js/fundamentals/unit1.js"></script>
+<script src="js/fundamentals/unit2.js"></script>
+<script src="js/fundamentals/unit3.js"></script>
+<script src="js/fundamentals/unit4.js"></script>
+<script src="js/fundamentals/unit5.js"></script>
+<script src="js/fundamentals/unit6.js"></script>
+<script src="js/technical/ta.js"></script>
+<script src="js/technical/course.js"></script>
+<script src="js/technical/unit1.js"></script>
+<script src="js/technical/unit2.js"></script>
+<script src="js/technical/unit3.js"></script>
+<script src="js/technical/unit4.js"></script>
+<script src="js/technical/unit5.js"></script>
+<script src="js/pivots/pv.js"></script>
+<script src="js/pivots/course.js"></script>
+<script src="js/pivots/unit1.js"></script>
+<script src="js/pivots/unit2.js"></script>
+<script src="js/pivots/unit3.js"></script>
+<script src="js/pivots/unit4.js"></script>
+<script src="js/pivots/unit5.js"></script>
+<script src="js/operator/course.js"></script>
+<script src="js/operator/unit1.js"></script>
+<script src="js/operator/unit2.js"></script>
+<script src="js/operator/unit3.js"></script>
+<script src="js/zone/course.js"></script>
+<script src="js/zone/unit1.js"></script>
+<script src="js/zone/unit2.js"></script>
+<script src="js/zone/unit3.js"></script>
+<script src="js/profile/mp.js"></script>
+<script src="js/profile/course.js"></script>
+<script src="js/profile/unit1.js"></script>
+<script src="js/profile/unit2.js"></script>
+<script src="js/profile/unit3.js"></script>
+<script src="js/wizards/course.js"></script>
+<script src="js/wizards/unit1.js"></script>
+<script src="js/wizards/unit2.js"></script>
+<script src="js/wizards/unit3.js"></script>
+<script src="js/murphy/course.js"></script>
+<script src="js/murphy/unit1.js"></script>
+<script src="js/murphy/unit2.js"></script>
+<script src="js/murphy/unit3.js"></script>
+<script src="js/murphy/unit4.js"></script>
+<script src="js/murphy/unit5.js"></script>
+<script src="js/nison/cs.js"></script>
+<script src="js/nison/course.js"></script>
+<script src="js/nison/unit1.js"></script>
+<script src="js/nison/unit2.js"></script>
+<script src="js/nison/unit3.js"></script>
+<script src="js/nison/unit4.js"></script>
+<script src="js/nison/unit5.js"></script>
+<script src="js/crypto/cr.js"></script>
+<script src="js/crypto/course.js"></script>
+<script src="js/crypto/unit1.js"></script>
+<script src="js/crypto/unit2.js"></script>
+<script src="js/crypto/unit3.js"></script>
+<script src="js/crypto/unit4.js"></script>
+<script src="js/lessons.js"></script>
+<script src="js/options/vix.js"></script>
+<script src="js/viz.js"></script>
+<script src="js/fundamentals/viz-unit1.js"></script>
+<script src="js/fundamentals/viz-unit2.js"></script>
+<script src="js/fundamentals/viz-unit3.js"></script>
+<script src="js/fundamentals/viz-unit4.js"></script>
+<script src="js/fundamentals/viz-unit5.js"></script>
+<script src="js/fundamentals/viz-unit6.js"></script>
+<script src="js/technical/viz-unit1.js"></script>
+<script src="js/technical/viz-unit2.js"></script>
+<script src="js/technical/viz-unit3.js"></script>
+<script src="js/technical/viz-unit4.js"></script>
+<script src="js/technical/viz-unit5.js"></script>
+<script src="js/pivots/viz-unit1.js"></script>
+<script src="js/pivots/viz-unit2.js"></script>
+<script src="js/pivots/viz-unit3.js"></script>
+<script src="js/pivots/viz-unit4.js"></script>
+<script src="js/pivots/viz-unit5.js"></script>
+<script src="js/options/viz-vix.js"></script>
+<script src="js/operator/viz-unit1.js"></script>
+<script src="js/operator/viz-unit2.js"></script>
+<script src="js/operator/viz-unit3.js"></script>
+<script src="js/zone/viz-unit1.js"></script>
+<script src="js/zone/viz-unit2.js"></script>
+<script src="js/zone/viz-unit3.js"></script>
+<script src="js/profile/viz-unit1.js"></script>
+<script src="js/profile/viz-unit2.js"></script>
+<script src="js/profile/viz-unit3.js"></script>
+<script src="js/wizards/viz-unit1.js"></script>
+<script src="js/wizards/viz-unit2.js"></script>
+<script src="js/wizards/viz-unit3.js"></script>
+<script src="js/murphy/viz-unit1.js"></script>
+<script src="js/murphy/viz-unit2.js"></script>
+<script src="js/murphy/viz-unit3.js"></script>
+<script src="js/murphy/viz-unit4.js"></script>
+<script src="js/murphy/viz-unit5.js"></script>
+<script src="js/nison/viz-unit1.js"></script>
+<script src="js/nison/viz-unit2.js"></script>
+<script src="js/nison/viz-unit3.js"></script>
+<script src="js/nison/viz-unit4.js"></script>
+<script src="js/nison/viz-unit5.js"></script>
+<script src="js/crypto/viz-unit1.js"></script>
+<script src="js/crypto/viz-unit2.js"></script>
+<script src="js/crypto/viz-unit3.js"></script>
+<script src="js/crypto/viz-unit4.js"></script>
+<script src="js/lab.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/app.js"></script>
+<!-- artifact:end -->
+</body>
+</html>

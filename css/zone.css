@@ -1,0 +1,50 @@
+/* The Trading Mindset visuals. Uses the tokens defined in app.css. */
+.zn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+@media (min-width: 640px) {
+  .zn-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.zn-cell {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.zn-signal {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  min-height: 3.2em;
+}
+.zn-strip {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: 3px;
+}
+.zn-strip span {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--sunk);
+  border: 1px solid var(--line);
+}
+.zn-strip .win {
+  background: var(--gain);
+  border-color: var(--gain);
+}
+.zn-strip .loss {
+  background: var(--loss);
+  border-color: var(--loss);
+}
+.zn-strip .skip {
+  background: transparent;
+  border-style: dashed;
+  border-width: 2px;
+}
+.zn-strip .next {
+  border: 2px solid var(--accent);
+}

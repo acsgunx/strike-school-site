@@ -1,0 +1,67 @@
+/* Pivot Point Trading visuals. Uses the tokens defined in app.css. */
+.pv-formulas {
+  display: grid;
+  gap: 8px;
+}
+.pv-tbl td,
+.pv-tbl th {
+  text-align: left;
+  font-size: 0.82rem;
+}
+.pv-tbl td:last-child {
+  text-align: right;
+}
+.lv-R {
+  color: var(--loss);
+}
+.lv-S {
+  color: var(--gain);
+}
+.lv-P {
+  color: var(--accent);
+}
+.pv-warn {
+  color: var(--warn);
+}
+.pv-plan {
+  display: grid;
+  gap: 8px;
+}
+.pv-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.pv-steps li {
+  display: grid;
+  gap: 3px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.92rem;
+}
+.pv-verdict {
+  display: grid;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--warn);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.pv-verdict > b {
+  font-size: 1.05rem;
+}
+.pv-verdict p {
+  margin: 0;
+  color: var(--ink);
+}
+.pv-v-gain {
+  border-left-color: var(--gain);
+}
+.pv-v-loss {
+  border-left-color: var(--loss);
+}

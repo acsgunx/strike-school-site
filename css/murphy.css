@@ -1,0 +1,39 @@
+/* Technical Analysis in Depth: the Elliott wave rules checklist and the sector rotation chips. */
+.mu-rules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.mu-rules li {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.mu-rule-i {
+  flex: none;
+  width: 1.2em;
+  font-weight: 700;
+}
+.mu-rules li.ok .mu-rule-i {
+  color: var(--gain);
+}
+.mu-rules li.no .mu-rule-i {
+  color: var(--loss);
+}
+
+/* Sector chips under the rotation clock. --c is set per chip to the stage's color. */
+.mu-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.mu-chip {
+  padding: 3px 10px;
+  border: 1.5px solid var(--c);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+}

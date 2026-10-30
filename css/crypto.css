@@ -1,0 +1,266 @@
+/* Crypto, Explained: the hash display, the chain of block cards, and the signing stages. */
+.cr-lbl {
+  font: 600 0.78rem/1.2 var(--f-mono);
+  color: var(--muted);
+  margin: 0;
+}
+.cr-in {
+  font-family: var(--f-mono);
+}
+
+/* 64 hash characters in a 16-column grid; a character that changes flashes. */
+.cr-hash {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 2px;
+  font: 600 0.92rem/1.6 var(--f-mono);
+  text-align: center;
+  background: var(--sunk);
+  border-radius: var(--r);
+  padding: 8px;
+}
+.cr-flip {
+  animation: cr-flip 0.7s ease-out;
+}
+@keyframes cr-flip {
+  0% {
+    background: var(--warn);
+    color: var(--on-solid);
+    border-radius: 3px;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+/* The chain: block cards joined by links that turn red when they break. */
+.cr-chain {
+  display: grid;
+  gap: 0;
+}
+.cr-block {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 2px solid var(--gain);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: border-color 0.35s, background 0.35s;
+}
+.cr-block.bad {
+  border-color: var(--loss);
+  background: color-mix(in srgb, var(--loss) 8%, var(--surface));
+  animation: cr-shake 0.4s;
+}
+.cr-block.warn {
+  border-color: var(--warn);
+  border-style: dashed;
+}
+.cr-bh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.cr-pill {
+  font: 700 0.72rem/1 var(--f-mono);
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: var(--on-solid);
+}
+.cr-pill.ok {
+  background: var(--gain);
+}
+.cr-pill.no {
+  background: var(--loss);
+}
+.cr-pill.meh {
+  background: var(--warn);
+}
+.cr-tx {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.92rem;
+}
+.cr-hot {
+  color: var(--loss);
+  font-weight: 700;
+}
+.cr-hl {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.cr-hl code {
+  font: 600 0.8rem var(--f-mono);
+  color: var(--ink);
+}
+.cr-hl.no code {
+  color: var(--loss);
+  text-decoration: line-through;
+}
+.cr-link {
+  text-align: center;
+  font: 600 0.75rem/1 var(--f-mono);
+  color: var(--gain);
+  padding: 8px 0;
+}
+.cr-link.no {
+  color: var(--loss);
+}
+
+/* Signing: three stages joined by connectors that fill as the payment travels. */
+.cr-stage {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.cr-st {
+  margin: 0;
+  font: 700 0.8rem/1.2 var(--f-mono);
+  color: var(--accent);
+}
+.cr-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+.cr-row > span {
+  color: var(--muted);
+}
+.cr-num {
+  font: 700 1rem var(--f-mono);
+}
+.cr-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--warn);
+}
+.cr-verdict {
+  margin: 4px 0 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--on-solid);
+}
+.cr-verdict.ok {
+  background: var(--gain);
+}
+.cr-verdict.no {
+  background: var(--loss);
+}
+.cr-flow {
+  height: 22px;
+  width: 4px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: linear-gradient(var(--accent), var(--accent)) top / 100% 0% no-repeat, var(--line);
+  transition: background-size 0.5s ease-out;
+}
+.cr-flow.on {
+  background-size: 100% 100%, auto;
+}
+
+.cr-pop {
+  animation: cr-pop 0.45s ease-out both;
+}
+@keyframes cr-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes cr-shake {
+  0%,
+  100% {
+    transform: none;
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+/* The miner: the block being mined, the latest tries, and a big nonce counter. */
+.cr-mblock {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: border-color 0.3s, background 0.3s;
+}
+.cr-mblock.ok {
+  border-color: var(--gain);
+  background: color-mix(in srgb, var(--gain) 10%, var(--surface));
+  animation: cr-pop 0.45s ease-out;
+}
+.cr-mblock code {
+  font: 600 0.8rem var(--f-mono);
+}
+.cr-big {
+  font: 700 1.25rem var(--f-mono);
+  font-variant-numeric: tabular-nums;
+}
+.cr-mlist {
+  display: grid;
+  gap: 2px;
+  font: 0.82rem/1.5 var(--f-mono);
+}
+.cr-mrow {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cr-mrow.ok {
+  background: color-mix(in srgb, var(--gain) 14%, transparent);
+  color: var(--ink);
+}
+.cr-z {
+  font-weight: 700;
+  color: var(--loss);
+}
+.cr-z.ok {
+  color: var(--gain);
+}
+
+/* The escrow contract's rules, with the line that is running highlighted. */
+.cr-code {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--r);
+  background: var(--sunk);
+  font: 0.82rem/1.6 var(--f-mono);
+  overflow-x: auto;
+}
+.cr-code span {
+  display: block;
+  padding: 0 6px;
+  border-radius: 4px;
+  transition: background 0.25s, color 0.25s;
+}
+.cr-code span.on {
+  background: var(--accent);
+  color: var(--on-solid);
+}

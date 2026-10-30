@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Strike School</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18205e"/>
+      <stop offset="1" stop-color="#3443c4"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="112" fill="url(#sheen)"/>
+  <path d="M96 168H416M96 256H416M96 344H416M168 96V416M256 96V416M344 96V416" stroke="#ffffff" stroke-opacity="0.13" stroke-width="6" fill="none"/>
+  <path d="M100 344H236L384 160" fill="none" stroke="#ffffff" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="384" cy="160" r="40" fill="#3dcb8c" stroke="#ffffff" stroke-width="14"/>
+</svg>
